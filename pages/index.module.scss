@@ -1,0 +1,93 @@
+.wrapper {
+    --originalWidth: 1189mm;
+    --originalHeight: 841mm;
+    --gap: calc(var(--modifier) * 40px);
+    --page-padding: calc(var(--modifier) * 120px);
+    margin: 0;
+    padding: var(--page-padding);
+    width: calc(var(--modifier) * var(--originalWidth));
+    height: calc(var(--modifier) * var(--originalHeight));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-size: calc(var(--modifier) * 200px);
+        margin-block-start: 0px;
+        margin-block-end: 50px;
+        font-weight: 900;
+        font-family: 'Inter';
+    }
+}
+
+.parent {
+    display: grid;
+    // display: flex;
+    grid-template-columns: repeat(16, minmax(0, calc(var(--modifier) * 35ch)));
+    grid-auto-rows: minmax(calc(var(--modifier) *400px), fit-content);
+    gap: var(--gap);
+}
+
+.credits {
+    align-self: flex-end;
+    flex-grow: 1;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+@media screen {
+
+    .wrapper {
+        width: 100%;
+        padding: 0;
+        height: fit-content;
+
+        h1 {
+            padding: 0 3rem;
+            font-size: 100px;
+
+            @media screen and (min-width: 700px) {
+                font-size: 150px;
+            }
+        }
+    }
+
+    .parent {
+        grid-template-columns: 1fr;
+        padding: 0 3rem;
+
+        @media screen and (min-width: 700px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and (min-width: 900px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media screen and (min-width: 1300px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        @media screen and (min-width: 1700px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        @media screen and (min-width: 2100px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        @media screen and (min-width: 2500px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+
+
+@media print {
+
+
+    @page {
+        size: calc(var(--modifier) * var(--originalWidth)) calc(var(--modifier) * var(--originalHeight));
+    }
+}

@@ -1,0 +1,26 @@
+.shadeBox {
+    display: flex;
+    flex-direction: column;
+    // width: minmax(26ch, 30ch);
+    // height: 600px;
+
+    h2 {
+        margin-block-end: 5px;
+    }
+
+    h3 {
+        margin-block-start: 0;
+        color: var(--color-accent-dark);
+        font-family: var(--font-base);
+    }
+}
+
+.color {
+    aspect-ratio: 1;
+}
+
+@media screen {
+    .shadeBox {
+        max-width: 400px;
+    }
+}
