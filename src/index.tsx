@@ -1,5 +1,5 @@
-import { ShadeBox } from "../component/shade-box/shade-box";
-import { DATA } from "../data/shades";
+import { ShadeBox } from "./component/shade-box/shade-box";
+import { DATA } from "./data/shades";
 import styles from './index.module.scss';
 
 export default function Page() {
